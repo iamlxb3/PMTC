@@ -1,4 +1,5 @@
 # Unsupervised representation learning of Player Behavioral Data with Confidence Guided Masking
+To view other works done by Fuxi Ai lab, you could visit https://github.com/fuxiAIlab
 
 ## Examples of Behavior Sequence Data
 
