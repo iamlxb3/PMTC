@@ -492,19 +492,6 @@ def main():
                                              is_print_pad_ratio=is_print_pad_ratio)
     step_size = math.ceil(total_num / data_args.large_batch)
 
-    # ipdb> tokenizer_vocab[1]
-    # '<pad>'
-    # ipdb> tokenizer_vocab[0]
-    # '<s>'
-    # ipdb> tokenizer_vocab[2]
-    # '</s>'
-    # ipdb> tokenizer_vocab[3]
-    # '<unk>'
-    # ipdb> tokenizer_vocab[4]
-    # '<mask>'
-    # ipdb> tokenizer_vocab[5]
-    # '▁'
-    # tokenizer_vocab = {v: k for k, v in tokenizer.get_vocab().items()}
     optimizer, lr_scheduler = None, None
 
     # compute total steps

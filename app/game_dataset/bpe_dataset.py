@@ -115,7 +115,6 @@ class BpeTextDataset(Dataset):
                 assert len(pure_text_block) == len(time_gap_block)
 
                 # Create dict for time/cn_char mapping
-                # 这里做一下转换，一天有86400秒
                 relative_timestamps = convert_abs_time_to_relative(time_gap_block)
                 sample_cn_char_timestamp_mapping = collections.defaultdict(lambda: [])
                 for char_i, (cn_char, timestamp) in enumerate(zip(pure_text_block, relative_timestamps)):

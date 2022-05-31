@@ -1,4 +1,5 @@
 # Unsupervised representation learning of Player Behavioral Data with Confidence Guided Masking
+Paper: https://dl.acm.org/doi/abs/10.1145/3485447.3512275
 
 ## Examples of Behavior Sequence Data
 
@@ -32,6 +33,19 @@ All code has been tested with minimum computation resources:
 
 
 ## Run pre-training experiments
+
+### How to build your own BPE tokenzier
+**raw_data_path**: The path to the dataset used to train the BPE tokenzier, each row is a sample, each sample consists of several IDs, separated by spaces \
+**log_id_map_path**: save path of ID and Chinese character mapping relationship table, the introduction of this is a trick of the engineering implementation, currently only the most high frequency of more than 20,000 IDs are retained, the remaining low frequency words will be replaced by [UNK]. (The reason for using this current scheme is that huggingface tokenzier does not support BPE merging for space-separated ascii strings) \
+**tokenizer_save_path**: Save path for BPE tokenizer \
+**vocab_size**: vocabulary size for BPE tokenzier
+```shell script
+python train_bpe_tokenizer.py --raw_data_path ../data/sample.txt \
+                              --log_id_map_path ../static/log_id_map_sample.json \
+                              --tokenizer_save_path ../static/bpe_tokenizer_sample.str \
+                              --vocab_size 50000
+```
+After training your own BPE compressor, you should create own your training data with 'log_id_map' (by mapping all ids to Chineses Characters, I know this is a bit weird but this is a workaround for the merging space-seperated acsii tokens) and replace 'bpe_tokenizer_path' in the following pre-training script (e.g. train_bpe_compact.sh)
 
 ### Pre-training scripts' arguments
 Below we show important input arguments for the pre-training scripts (e.g. train_bpe_compact.sh).
@@ -127,6 +141,17 @@ To inspect the training process of downstream tasks, go to the downstream_tasks 
   ```shell script
   bash clustering.sh
   ```
+
+## Citation
+```
+@inproceedings{pu2022unsupervised,
+  title={Unsupervised Representation Learning of Player Behavioral Data with Confidence Guided Masking},
+  author={Pu, Jiashu and Lin, Jianshi and Mao, Xiaoxi and Tao, Jianrong and Shen, Xudong and Shang, Yue and Wu, Runze},
+  booktitle={Proceedings of the ACM Web Conference 2022},
+  pages={3396--3406},
+  year={2022}
+}
+```
 
 ## License
 

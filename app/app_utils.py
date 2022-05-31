@@ -168,7 +168,6 @@ def hdf5_load_dataset(hdf5_file_path, all_indices, step_size,
         large_batch_indices = list(range(len(large_batch_data)))
         random.shuffle(large_batch_indices)
         large_batch_data = large_batch_data[large_batch_indices]
-
         t2 = time.time()
         # Read Data step_i-0, Total time: 2.59651517868042
         print(f"Read Data step_i-{step_i}, Total data load time: {t2 - t1}")

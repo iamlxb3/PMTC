@@ -21,23 +21,6 @@ export PYTHONHASHSEED=0
 
 echo use_time_embed: $use_time_embed
 
-# Grid Search for hyper parameters
-
-# 重新跑之前检查一下参数！！！！！！！ MASK prob之类的
-# -------------------------------------------------------------------
-# DEBUG
-# -------------------------------------------------------------------
-# bash train_bpe_compact_part_prob_auto_t_linear_increase.sh 512 3 2 5 1 bert 512 0 4 mlm 0.16 0.5 0.0 50
-# small DEBUG
-# bash train_bpe_compact_part_prob_auto_t_linear_increase.sh 512 3 2 5 1 bert 512 0 8 mlm 0.16 0.5 0.0 500
-# -------------------------------------------------------------------
-
-# -------------------------------------------------------------------
-# 一天内能跑完的版本
-# -------------------------------------------------------------------
-# bash train_bpe_compact_part_prob_auto_t_linear_increase.sh 512 7 8 20 1 bert 40000 0 32 mlm 0.16 0.5 0.0 200000
-# -------------------------------------------------------------------
-
 output_dir=../bert_model/game
 max_token_vocab_size=50000
 bpe_tokenizer_path=../static/bpe_new.str
