@@ -219,7 +219,6 @@ def init_model(config, model_args, tokenizer):
         model.resize_token_embeddings(len(tokenizer.get_vocab()))
         print(f"Resize token embedding done, set to {len(tokenizer.get_vocab())}")
 
-    # 在print模型的时候sinusoidal_time_embeddings会看不到，因为它不是pytorch的组件
     print(model)
     model_total_params = sum(p.numel() for p in model.parameters())
     print(f"model total params: {model_total_params}")
@@ -598,12 +597,6 @@ def main():
     # save predict y prob
     if masker_recorder is not None:
         save_train_predict_prob(masker_recorder, tokenizer, new_output_dir, data_args)
-
-    # # Train adapter
-    # if data_args.is_train_time_freq_adapter:
-    #     from pretrain_adapter.train_adapter import prepare_adapater_data
-    #     prepare_adapater_data(new_output_dir, data_args.h5_data_file_path, all_indices, step_size,
-    #                           data_args.large_batch)
 
 
 if __name__ == "__main__":
