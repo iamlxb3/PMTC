@@ -1,5 +1,7 @@
 # Unsupervised representation learning of Player Behavioral Data with Confidence Guided Masking
-Paper: https://dl.acm.org/doi/abs/10.1145/3485447.3512275
+Paper Link: https://dl.acm.org/doi/abs/10.1145/3485447.3512275
+
+To view other works done by Fuxi Ai lab, you could visit https://github.com/fuxiAIlab
 
 ## Examples of Behavior Sequence Data
 
@@ -156,3 +158,15 @@ To inspect the training process of downstream tasks, go to the downstream_tasks 
 ## License
 
 Our project is under the GPL License.
+
+##  Cite our paper
+```
+@inproceedings{pu2022unsupervised,
+  title={Unsupervised Representation Learning of Player Behavioral Data with Confidence Guided Masking},
+  author={Pu, Jiashu and Lin, Jianshi and Mao, Xiaoxi and Tao, Jianrong and Shen, Xudong and Shang, Yue and Wu, Runze},
+  booktitle={Proceedings of the ACM Web Conference 2022},
+  pages={3396--3406},
+  year={2022}
+}
+```
+
